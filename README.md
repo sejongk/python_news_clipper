@@ -1,2 +1,3 @@
 # python_news_brief
-using apache kafka
+Using Apache Kafka
+based on python examples in https://github.com/confluentinc/examples
