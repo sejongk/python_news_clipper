@@ -74,6 +74,7 @@ podTemplate(label: 'buildah-build',
                         git checkout master
                         cd deploy/patch && kustomize edit set image 10.43.145.201:5000/python_news_clipper:${env.BUILD_NUMBER}
                         cd .. && kustomize build patch > deployment.yaml
+                        git add deployment.yaml
                         git commit -a -m "update image version into ${env.BUILD_NUMBER}"
                         git push
                     """)
