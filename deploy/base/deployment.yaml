@@ -15,24 +15,24 @@ spec:
       containers:
       - name: python-news-clipper
         image: 10.43.145.201:5000/python_news_clipper:1
-      env:
-      - name: MAIL_INTERVAL_MIN
-        valueFrom:
-          configMapKeyRef:
-            name: python-news-clipper
-            key: mailIntervalMin
-      - name: MAIL_RECEIVER_EMAILS
-        valueFrom:
-          configMapKeyRef:
-            name: python-news-clipper
-            key: mailReceiverEmails
-      - name: MAIL_SENDER_EMAIL
-        valueFrom:
-          secretKeyRef:
-            name: python-news-clipper
-            key: mailSenderEmail
-      - name: MAIL_SENDER_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: python-news-clipper
-            key: mailSenderPassword
+        env:
+        - name: MAIL_INTERVAL_MIN
+          valueFrom:
+            configMapKeyRef:
+              name: python-news-clipper
+              key: mailIntervalMin
+        - name: MAIL_RECEIVER_EMAILS
+          valueFrom:
+            configMapKeyRef:
+              name: python-news-clipper
+              key: mailReceiverEmails
+        - name: MAIL_SENDER_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: python-news-clipper
+              key: mailSenderEmail
+        - name: MAIL_SENDER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: python-news-clipper
+              key: mailSenderPassword
