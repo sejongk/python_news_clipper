@@ -4,4 +4,4 @@ resources:
 - ../base
 images:
 - name: 127.0.0.1:30500/python_news_clipper
-  newTag: "19"
+  newTag: "20"
