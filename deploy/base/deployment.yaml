@@ -15,5 +15,3 @@ spec:
       containers:
       - name: python-news-clipper
         image: 10.43.145.201:5000/python_news_clipper:1
-    #  imagePullSecrets:
-    #  - name: docker-registry-secret
