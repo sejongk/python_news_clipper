@@ -1,5 +1,6 @@
 import os
 import time
+import base64
 
 import smtplib
 from email.mime.text import MIMEText
@@ -12,8 +13,8 @@ def create_mail_content(content):
 
 
 def send_mail(content):
-    sender_email = os.environ['MAIL_SENDER_EMAIL']
-    sender_password = os.environ['MAIL_SENDER_PASSWORD']
+    sender_email = base64.b64decode(os.environ['MAIL_SENDER_EMAIL']).decode('utf-8')
+    sender_password = base64.b64decode(os.environ['MAIL_SENDER_PASSWORD']).decode('utf-8')
     receiver_emails = os.environ['MAIL_RECEIVER_EMAILS'].split(":")
 
     smtpName = 'smtp.naver.com' #smtp 서버 주소
