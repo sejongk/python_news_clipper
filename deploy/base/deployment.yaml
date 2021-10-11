@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-news-clipper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-news-clipper
+  template:
+    metadata:
+      labels:
+        app: python-news-clipper
+    spec:
+      containers:
+      - name: python-news-clipper
+        image: 10.43.145.201:5000/python_news_clipper:1
+    #  imagePullSecrets:
+    #  - name: docker-registry-secret

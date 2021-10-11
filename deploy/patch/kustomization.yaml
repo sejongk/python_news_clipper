@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../base
+images:
+- name: 10.43.145.201:5000/python_news_clipper
+  newTag: "1"
