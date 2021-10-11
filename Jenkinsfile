@@ -71,7 +71,7 @@ podTemplate(label: 'buildah-build',
                         set +x
                         export GIT_SSH_COMMAND="ssh -oStrictHostKeyChecking=no"
                         git config --global user.email "sepaper@naver.com"
-                        git checkout main
+                        git checkout master
                         cd patch && kustomize edit set image 10.43.145.201:5000/python_news_clipper:${env.BUILD_NUMBER}
                         git commit -a -m "update image version into ${env.BUILD_NUMBER}"
                         git push
